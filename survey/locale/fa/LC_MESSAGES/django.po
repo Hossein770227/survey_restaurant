@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-28 20:21+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\models.py:6
+msgid "title"
+msgstr "عنوان"
+
+#: .\models.py:7 .\models.py:23
+msgid "active"
+msgstr "فعال"
+
+#: .\models.py:8
+msgid "date created"
+msgstr "تاریخ"
+
+#: .\models.py:16 .\templates\survey\survey_list.html:54
+msgid "perfect"
+msgstr "عالی"
+
+#: .\models.py:17 .\templates\survey\survey_list.html:74
+msgid "good"
+msgstr "خوب"
+
+#: .\models.py:18
+msgid "manual"
+msgstr "معمولی"
+
+#: .\models.py:19
+msgid "bad"
+msgstr "بد"
+
+#: .\models.py:21
+msgid "food"
+msgstr "غذا"
+
+#: .\models.py:22
+msgid "quality"
+msgstr "کیفیت"
+
+#: .\templates\survey\survey_list.html:8
+msgid "survey list"
+msgstr "لیست نظرسنجی"
+
+#: .\templates\survey\survey_list.html:15
+msgid "survey"
+msgstr "نظرسنجی"
+
+#: .\templates\survey\survey_list.html:17
+msgid "came back"
+msgstr "برگشت"
+
+#: .\templates\survey\survey_list.html:33
+msgid "food quality"
+msgstr "کیفیت غذا"
+
+#: .\templates\survey\survey_list.html:94
+msgid "suitable"
+msgstr "مناسب"
+
+#: .\templates\survey\survey_list.html:114
+msgid "weak"
+msgstr "ضعیف"
