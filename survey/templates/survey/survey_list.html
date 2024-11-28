@@ -1,5 +1,6 @@
 {% extends "_base.html" %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 
@@ -312,28 +313,16 @@
     <div class="reveal custom_popup" id="Modal_1" data-reveal>
         <h1 class="modal_title">لطفا نظر خود را ثبت کنید</h1>
 
-        <ul class="survey_list ">
-            {% for food in food_quality %}
-            <!-- start item -->
-                <li class="item">
-                    <div class="title">{{food.category.title}}</div>
-                    <div class="rating">
-                        <button class="clicked" data-rate="4" data-open="Modal_1">
-                            <span class="text">عالی</span>
-                        </button>
-                        <button data-rate="3" data-open="Modal_1">
-                            <span class="text">خوب</span>
-                        </button>
-                        <button data-rate="2" data-open="Modal_1">
-                            <span class="text">متوسط</span>
-                        </button>
-                        <button data-rate="1" data-open="Modal_1">
-                            <span class="text">ضعیف</span>
-                        </button>
-                    </div>
-                </li>
-            <!-- // end start item -->
-            {% endfor %}
+        <ul class="survey_list ">  
+            <li class="item">
+                
+                <div class="rating">
+                    <form>
+                        {% csrf_token %}
+                        {{form|crispy}}
+                    </form>
+            </li>
+
         </ul>
 
         <div class="modal_button_container">
