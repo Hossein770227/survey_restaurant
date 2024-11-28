@@ -8,6 +8,12 @@ def survey_page_view(request):
 
 
 def survey_list_view(request):
-    queryset = FoodQuality.objects.filter(is_active = True)
-    return render(request, 'survey/survey_list.html', context={'foods':queryset, 'form':FoodForm()})
+    if request.method =='POST':
+        food_form = FoodForm(request.POST)
+        if food_form.is_valid():
+            food_form.save()
+            food_form = FoodForm()
+    else:
+        food_form = FoodForm()
+    return render(request, 'survey/survey_list.html', context={'form':food_form})
 
