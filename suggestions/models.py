@@ -12,6 +12,4 @@ class CommentsSuggestions(models.Model):
         verbose_name =_("comments and suggestions ")
         verbose_name_plural = _("comments and suggestions ")
 
-    def __str__(self):
-        return self.date_time_created
     

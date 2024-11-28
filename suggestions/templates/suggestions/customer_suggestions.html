@@ -14,16 +14,20 @@
                     <h2 class="title">{% trans "Your comments and suggestions" %}</h2>
                 </div>
 
-                <form>
-                    <textarea class="textarea" name="" id="" cols="30" rows="10" placeholder="اگه نظر یا پیشنهادی برای بهبود کیفیت و خدمات رسانی مجموعه ما دارید، اینجا برامون بنویسید"></textarea>
+                {% comment %} <form>
+                    {{form.as_p}}
+                </form> {% endcomment %}
+                <form action='' method='POST'>
+                    {% csrf_token %}
+                    <textarea class="textarea" name="text" id="" cols="30" rows="10" placeholder="اگه نظر یا پیشنهادی برای بهبود کیفیت و خدمات رسانی مجموعه ما دارید، اینجا برامون بنویسید"></textarea>
+                    <div class="form_button_container">
+                        <button type='submit' class="button large expanded green" data-open="Modal_3">
+                            <span class="text">ارسال</span>
+                        </button>
+                    </div>
                 </form>
             
 
-                <div class="form_button_container">
-                    <button class="button large expanded green" data-open="Modal_3">
-                        <span class="text">ارسال</span>
-                    </button>
-                </div>
 
             </div>
         </div>

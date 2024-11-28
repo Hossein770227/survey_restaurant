@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import CommentsSuggestions
+
+
+@admin.register(CommentsSuggestions)
+class CommentsSuggestionsAdmin(admin.ModelAdmin):
+    list_display=['date_time_created']
