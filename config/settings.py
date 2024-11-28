@@ -41,8 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # my app
+    # my apps
     'survey',
+
+    # third party apps
+    "crispy_forms",
+    "crispy_bootstrap4",
+
 ]
 
 MIDDLEWARE = [
@@ -131,3 +136,16 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOCALE_PATHS = [
+os.path.join(BASE_DIR, 'templates/locale'),
+]
+
+LANGUAGES =(
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
