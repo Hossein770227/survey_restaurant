@@ -13,7 +13,7 @@
             <div class="survey_box">
                 <div class="page_title">
                     <h2 class="title">{% trans "survey" %}</h2>
-                    <a href="01-index.html" class="back">
+                    <a href="{% url "survey:survey" %}" class="back">
                         {% trans "came back" %}
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -30,7 +30,7 @@
                 <ul class="survey_list">
                     <!-- start item -->
                     <li class="item">
-                        <div class="title">{% trans "food quality" %}</div>
+                        <div class="title">1.{% trans "food quality" %}</div>
                         <div class="rating">
                             <button data-rate="4" data-open="Modal_1">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -299,8 +299,8 @@
                 </ul>
 
                 <div class="form_button_container">
-                    <a href="03-index.html" class="button large expanded green">
-                        <span class="text">ثبت نظرسنجی</span>
+                    <a href="{% url "suggestions:suggestions" %}" class="button large expanded green">
+                        <span class="text">{% trans "Survey registration" %}</span>
                     </a>
                 </div>
 
@@ -329,7 +329,7 @@
 
         <div class="modal_button_container">
             <button class="button large expanded green" data-close>
-                <span class="text">مرحله بعدی</span>
+                <span class="text">{% trans "The next step" %}</span>
             </button>
         </div>
 
@@ -368,7 +368,7 @@
 
         <div class="modal_button_container">
             <button class="button large expanded green" data-close>
-                <span class="text">مرحله بعدی</span>
+                <span class="text">{% trans "The next step" %}</span>
             </button>
         </div>
 
@@ -395,8 +395,19 @@
 
         <ul class="survey_list ">
             <!-- start item -->
+            {% comment %} <li class="item"> {% endcomment %}
             <li class="item">
-                <div class="title">نظافت میز غذا</div>
+            
+                <div class="rating">
+                    <form action='' method='POST'>
+                        {% csrf_token %}
+                        {{clean_form|crispy}}
+                        <button type='submit' class="button  expanded blue" data-close>
+                            <span class="text">{% trans "submit" %}</span>
+                        </button>
+                    </form>
+            </li>
+                {% comment %} <div class="title">نظافت میز غذا</div>
                 <div class="rating">
                     <button class="clicked" data-rate="4" data-open="Modal_3">
                         <span class="text">عالی</span>
@@ -410,11 +421,11 @@
                     <button data-rate="1" data-open="Modal_3">
                         <span class="text">ضعیف</span>
                     </button>
-                </div>
-            </li>
+                </div> {% endcomment %}
+            {% comment %} </li> {% endcomment %}
             <!-- // end start item -->
             <!-- start item -->
-            <li class="item">
+            {% comment %} <li class="item">
                 <div class="title">نظافت آشپزخانه</div>
                 <div class="rating">
                     <button data-rate="4" data-open="Modal_3">
@@ -430,10 +441,10 @@
                         <span class="text">ضعیف</span>
                     </button>
                 </div>
-            </li>
+            </li> {% endcomment %}
             <!-- // end start item -->
             <!-- start item -->
-            <li class="item">
+            {% comment %} <li class="item">
                 <div class="title">نظافت سرویسهای بهداشتی </div>
                 <div class="rating">
                     <button data-rate="4" data-open="Modal_3">
@@ -449,13 +460,13 @@
                         <span class="text">ضعیف</span>
                     </button>
                 </div>
-            </li>
+            </li> {% endcomment %}
             <!-- // end start item -->
         </ul>
 
         <div class="modal_button_container">
             <button class="button large expanded green" data-close>
-                <span class="text">مرحله بعدی</span>
+                <span class="text">{% trans "The next step" %} </span>
             </button>
         </div>
 

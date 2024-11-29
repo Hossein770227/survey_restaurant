@@ -1,20 +1,10 @@
+{% extends "_base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html dir="rtl">
+{% load i18n %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static "css/foundation-float.css" %}">
+{% block page_title %}{% trans "survey list" %}{% endblock page_title %}
 
-
-    <link rel="stylesheet" href="{% static "css/app.css" %}">
-
-</head>
-
-<body>
-
+{% block content %}
     <div class="row columns">
         <div class="large-5 medium-5 float-center">
             <div class="intro_box center">
@@ -39,7 +29,4 @@
             </div>
         </div>
     </div>
-
-</body>
-
-</html>
+{% endblock content %}

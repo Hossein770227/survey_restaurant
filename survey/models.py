@@ -60,9 +60,6 @@ class SurveyAboutUs(models.Model):
         verbose_name =_("survey about us")
         verbose_name_plural = _("survey about us")
 
-
-    def __str__(self):
-        return self.Strength
     
 
 #  Collection cleaning moldels

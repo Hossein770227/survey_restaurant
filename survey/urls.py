@@ -8,5 +8,6 @@ app_name = 'survey'
 urlpatterns = [
     path('', views.survey_page_view, name='survey'),
     path('food/', views.survey_list_view, name='survey_food'),
-    path('strength', views.our_strengths_view, name='strength')
+    path('strength/', views.our_strengths_view, name='strength'),
+    path('clean/', views.survey_clean_view, name='clean'),
 ]
