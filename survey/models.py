@@ -63,3 +63,39 @@ class SurveyAboutUs(models.Model):
 
     def __str__(self):
         return self.Strength
+    
+
+#  Collection cleaning moldels
+
+class CollectionCleaning(models.Model):
+    title = models.CharField(_("title"), max_length=255)
+    is_active = models.BooleanField(_("active"), default=True)
+    date_time_created = models.DateField(_("date created"),  auto_now_add=True)
+
+    class Meta:
+        verbose_name =_("collection")
+        verbose_name_plural = _("collection")
+
+    def __str__(self):
+        return self.title
+
+
+class Cleaning(models.Model):
+    CHOICES = (
+        ('4', _('perfect')),
+        ('3', _('good')),
+        ('2', _('manual')),
+        ('1', _('bad')),
+    )
+    cleaning_the_area = models.ForeignKey(CollectionCleaning, verbose_name=_("cleannig area"), on_delete=models.CASCADE)
+    costomer_score = models.CharField(_("customer score"),choices=CHOICES, max_length=50)
+    date_time_created = models.DateField(_("date created"),  auto_now_add=True)
+
+    class Meta:
+        verbose_name =_("coustomer score for cleaning ")
+        verbose_name_plural = _("coustomer score for cleaning ")
+
+
+    def __str__(self):
+        return self.costomer_score
+

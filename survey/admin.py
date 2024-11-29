@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import  Food, FoodQuality, OurStrengths, SurveyAboutUs
+from .models import  Cleaning, CollectionCleaning, Food, FoodQuality, OurStrengths, SurveyAboutUs
 
 
 class FoodQualityInLine(admin.TabularInline):
@@ -35,3 +35,13 @@ class OurStrengthAdmin(admin.ModelAdmin):
 class SurveyAboutUs(admin.ModelAdmin):
     list_display = ['strength','yes_or_no','date_time_created',]
     search_fields = ['Strength',]
+
+
+@admin.register(CollectionCleaning)
+class CollectionCleaningAdmin(admin.ModelAdmin):
+    list_display = ['title','is_active','date_time_created',]
+
+
+@admin.register(Cleaning)
+class CleaningScoreCustomer(admin.ModelAdmin):
+    list_display = ['cleaning_the_area','costomer_score','date_time_created',]
