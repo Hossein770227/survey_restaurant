@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # third party apps
     "crispy_forms",
     "crispy_bootstrap4",
+    'rosetta',
 
 ]
 
@@ -144,6 +145,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOCALE_PATHS = [
 os.path.join(BASE_DIR, 'templates/locale'),
 ]
+
 
 LANGUAGES =(
     ('en', 'English'),

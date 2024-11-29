@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('survey/', include('survey.urls')),
     path('suggestions/', include('suggestions.urls')),
+    path('rosetta/', include('rosetta.urls')),
 ]

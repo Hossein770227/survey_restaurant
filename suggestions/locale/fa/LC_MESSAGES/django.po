@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-29 13:01+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps.py:8 .\templates\suggestions\customer_suggestions.html:5
+msgid "suggestions"
+msgstr "پیشنهادات"
+
+#: .\models.py:7
+msgid "text"
+msgstr "متن"
+
+#: .\models.py:8
+msgid "date time created"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:12 .\models.py:13
+msgid "comments and suggestions "
+msgstr "انتقادات و پیشنهاد ها"
+
+#: .\templates\suggestions\customer_suggestions.html:14
+msgid "Your comments and suggestions"
+msgstr "انتقاد و پیشنهاد شما"
+
+#: .\templates\suggestions\customer_suggestions.html:23
+msgid ""
+"If you have any comments or suggestions to improve the quality and service "
+"of our collection, write to us here"
+msgstr ""
+"اگر نظر یا پیشنهادی برای بهبود کیفیت و خدمات دارید از مجموعه ما، اینجا برای "
+"ما بنویس"
+
+#: .\templates\suggestions\customer_suggestions.html:26
+msgid "send"
+msgstr "ارسال"
+
+#: .\templates\suggestions\customer_suggestions.html:47
+msgid "Thank you for your kind words"
+msgstr "با تشکر از شما برای کلمات محبت آمیز"
+
+#: .\templates\suggestions\customer_suggestions.html:51
+msgid "instagram"
+msgstr "اینستاگرام"
+
+#: .\templates\suggestions\customer_suggestions.html:55
+msgid "whatsapp"
+msgstr "واتساپ"

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import FoodQuality
+from .models import OurStrengths
 from .forms import FoodForm
 
 def survey_page_view(request):
@@ -17,3 +17,8 @@ def survey_list_view(request):
         food_form = FoodForm()
     return render(request, 'survey/survey_list.html', context={'form':food_form})
 
+
+def our_strengths_view(request):
+    queryset_strengths = OurStrengths.objects.all()
+    
+    return render(request, 'survey/survey_list.html', context={'strengths':queryset_strengths})

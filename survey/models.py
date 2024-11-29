@@ -37,7 +37,7 @@ class FoodQuality(models.Model):
 
 
 class OurStrengths(models.Model):
-    Strength = models.CharField(_("strength"), max_length=255)
+    title = models.CharField(_("strength"), max_length=255)
     is_active = models.BooleanField(_("active"), default=True)
     date_time_created = models.DateTimeField(_("date time created"),  auto_now_add=True)
 
@@ -47,7 +47,7 @@ class OurStrengths(models.Model):
 
 
     def __str__(self):
-        return self.Strength
+        return self.title
 
 
 

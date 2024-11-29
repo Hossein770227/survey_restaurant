@@ -26,8 +26,8 @@ class FoodAdmin(admin.ModelAdmin):
 
 @admin.register(OurStrengths)
 class OurStrengthAdmin(admin.ModelAdmin):
-    list_display = ['Strength','is_active','date_time_created',]
-    search_fields = ['Strength',]
+    list_display = ['title','is_active','date_time_created',]
+    search_fields = ['title',]
 
 
 
