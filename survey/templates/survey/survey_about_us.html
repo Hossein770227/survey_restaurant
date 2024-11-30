@@ -28,11 +28,10 @@
                     </a>
                 </div>
                 <ul class="survey_list">
-                    <!-- start item -->
                     <li class="item">
-                        <div class="title">1.{% trans "food quality" %}</div>
+                        <div class="title">۲.{% trans " Services and servicing of the collection" %}</div>
                         <div class="rating">
-                            <button data-rate="4" data-open="Modal_1">
+                            <button data-rate="4" data-open="Modal_2">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -53,7 +52,7 @@
                                 </svg>
                                 <span class="text">{% trans "perfect" %}</span>
                             </button>
-                            <button  data-rate="3" data-open="Modal_1">
+                            <button data-rate="3" data-open="Modal_2">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -73,7 +72,7 @@
                                     </g>
                                 </svg> <span class="text">{% trans "good" %}</span>
                             </button>
-                            <button class="clicked" data-rate="2" data-open="Modal_1">
+                            <button data-rate="2" data-open="Modal_4">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -93,7 +92,7 @@
                                     </g>
                                 </svg> <span class="text">{% trans "suitable" %}</span>
                             </button>
-                            <button data-rate="1" data-open="Modal_1">
+                            <button class="clicked" data-rate="1" data-open="Modal_4">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -115,11 +114,11 @@
                             </button>
 
                         </div>
-                    </li> 
+                    </li>
                 </ul>
 
                 <div class="form_button_container">
-                    <a href="{% url "survey:about" %}" class="button large expanded green">
+                    <a href="{% url "suggestions:suggestions" %}" class="button large expanded green">
                         <span class="text">{% trans "The next step" %}</span>
                     </a>
                 </div>
@@ -127,26 +126,18 @@
             </div>
         </div>
     </div>
-
-    <!-- Modal_1 -->
-    <div class="reveal custom_popup" id="Modal_1" data-reveal>
-        <h1 class="modal_title">لطفا نظر خود را ثبت کنید</h1>
-
-        <ul class="survey_list ">  
-            <li class="item">
-                
-                <div class="rating">
-                    <form action='' method='POST'>
-                        {% csrf_token %}
-                        {{form|crispy}}
-                        <button type='submit' class="button  expanded blue" data-close>
-                            <span class="text">{% trans "submit" %}</span>
-                        </button>
-                    </form>
-            </li>
-
-        </ul>
-
+    <!-- Modal_2 -->
+    <div class="reveal custom_popup" id="Modal_2" data-reveal>
+        <h1 class="modal_title">{% trans " in your opinion" %}</h1>
+            <form >
+                {% csrf_token %}
+                {{form|crispy}}
+            <div class="modal_button_container">
+                <button class="button large expanded green" data-close>
+                    <span class="text">{% trans "The next step" %}</span>
+                </button>
+            </div>
+            <form>
 
         <!-- close btn for modal -->
         <button class="close-button" data-close aria-label="Close modal" type="button">
@@ -163,8 +154,7 @@
         </button>
         <!-- // end close btn for modal -->
     </div>
-    <!-- // end Modal_1 -->
-
+    <!-- // end Modal_2 -->
 {% endblock content %}
 
 {% block script %}

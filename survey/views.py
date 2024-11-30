@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-from .models import OurStrengths
-from .forms import FoodForm, CleanForm
+
+from .forms import FoodForm, CleanForm, SurveyAboutUsForm
 
 def survey_page_view(request):
     return render(request, 'survey/survey.html')
@@ -18,10 +18,17 @@ def survey_list_view(request):
     return render(request, 'survey/survey_list.html', context={'form':food_form})
 
 
-def our_strengths_view(request):
-    queryset_strengths = OurStrengths.objects.all()
-    
-    return render(request, 'survey/survey_list.html', context={'strengths':queryset_strengths})
+
+def survey_abuout_us_view(request):
+    if request.method =='POST':
+        form = SurveyAboutUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = SurveyAboutUsForm()
+    else:
+        form = SurveyAboutUsForm()
+    return render(request, 'survey/survey_about_us.html', context={'form':form})
+
 
 
 
