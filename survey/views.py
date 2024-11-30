@@ -30,9 +30,8 @@ def survey_clean_view(request):
         clean_form = CleanForm(request.POST)
         if clean_form.is_valid():
             clean_form.save()
-            clean_form = CleanForm()  
-            
+            clean_form = CleanForm()          
     else:
         clean_form = CleanForm()
      
-    return render(request, 'survey/survey_list.html', context={'clean_form':clean_form})
+    return render(request, 'survey/survey_clean.html', context={'survey_clean':clean_form})

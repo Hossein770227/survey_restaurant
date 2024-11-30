@@ -115,10 +115,10 @@
                             </button>
 
                         </div>
-                    </li>
+                    </li> 
                     <!-- // end item -->
                     <!-- start item -->
-                    <li class="item">
+                    {% comment %} <li class="item">
                         <div class="title">۲.{% trans " Services and servicing of the collection" %}</div>
                         <div class="rating">
                             <button data-rate="4" data-open="Modal_2">
@@ -204,11 +204,11 @@
                             </button>
 
                         </div>
-                    </li>
+                    </li> {% endcomment %}
                     <!-- // end item -->
                      <!-- start item -->
-                     <li class="item">
-                        <div class="title">۳. نظافت مجموعه</div>
+                     {% comment %} <li class="item">
+                        <div class="title"><a href={% url "survey:clean" %}> نظافت مجموعه</a></div>
                         <div class="rating">
                             <button data-rate="4" data-open="Modal_3">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -293,7 +293,7 @@
                             </button>
 
                         </div>
-                    </li>
+                    </li> {% endcomment %}
                     <!-- // end item -->
 
                 </ul>
@@ -352,7 +352,7 @@
 
 
     <!-- Modal_2 -->
-    <div class="reveal custom_popup" id="Modal_2" data-reveal>
+    {% comment %} <div class="reveal custom_popup" id="Modal_2" data-reveal>
         <h1 class="modal_title">{% trans " in your opinion" %}</h1>
         {% for strength in strengths %}
             <div class="checkbox_group">
@@ -386,84 +386,26 @@
             </svg>
         </button>
         <!-- // end close btn for modal -->
-    </div>
+    </div> {% endcomment %}
     <!-- // end Modal_2 -->
 
      <!-- Modal_3 -->
-     <div class="reveal custom_popup" id="Modal_3" data-reveal>
+     {% comment %} <div class="reveal custom_popup" id="Modal_3" data-reveal>
         <h1 class="modal_title">لطفا نظر خود را ثبت کنید</h1>
+            <ul class="survey_list ">  
+                <li class="item">
+                    
+                    <div class="rating">
+                        <form action="{% url "survey:clean" %}" method='POST'>
+                            {% csrf_token %}
+                            {{survey_clean|crispy}}
+                            <button type='submit' class="button  expanded blue" data-close>
+                                <span class="text">{% trans "submit" %}</span>
+                            </button>
+                        </form>
+                </li>
 
-        <ul class="survey_list ">
-            <!-- start item -->
-            {% comment %} <li class="item"> {% endcomment %}
-            <li class="item">
-            
-                <div class="rating">
-                    <form action='' method='POST'>
-                        {% csrf_token %}
-                        {{clean_form|crispy}}
-                        <button type='submit' class="button  expanded blue" data-close>
-                            <span class="text">{% trans "submit" %}</span>
-                        </button>
-                    </form>
-            </li>
-                {% comment %} <div class="title">نظافت میز غذا</div>
-                <div class="rating">
-                    <button class="clicked" data-rate="4" data-open="Modal_3">
-                        <span class="text">عالی</span>
-                    </button>
-                    <button data-rate="3" data-open="Modal_3">
-                        <span class="text">خوب</span>
-                    </button>
-                    <button data-rate="2" data-open="Modal_3">
-                        <span class="text">متوسط</span>
-                    </button>
-                    <button data-rate="1" data-open="Modal_3">
-                        <span class="text">ضعیف</span>
-                    </button>
-                </div> {% endcomment %}
-            {% comment %} </li> {% endcomment %}
-            <!-- // end start item -->
-            <!-- start item -->
-            {% comment %} <li class="item">
-                <div class="title">نظافت آشپزخانه</div>
-                <div class="rating">
-                    <button data-rate="4" data-open="Modal_3">
-                        <span class="text">عالی</span>
-                    </button>
-                    <button class="clicked" data-rate="3" data-open="Modal_3">
-                        <span class="text">خوب</span>
-                    </button>
-                    <button data-rate="2" data-open="Modal_3">
-                        <span class="text">متوسط</span>
-                    </button>
-                    <button data-rate="1" data-open="Modal_3">
-                        <span class="text">ضعیف</span>
-                    </button>
-                </div>
-            </li> {% endcomment %}
-            <!-- // end start item -->
-            <!-- start item -->
-            {% comment %} <li class="item">
-                <div class="title">نظافت سرویسهای بهداشتی </div>
-                <div class="rating">
-                    <button data-rate="4" data-open="Modal_3">
-                        <span class="text">عالی</span>
-                    </button>
-                    <button data-rate="3" data-open="Modal_3">
-                        <span class="text">خوب</span>
-                    </button>
-                    <button data-rate="2" data-open="Modal_3">
-                        <span class="text">متوسط</span>
-                    </button>
-                    <button class="clicked" data-rate="3" data-open="Modal_3">
-                        <span class="text">ضعیف</span>
-                    </button>
-                </div>
-            </li> {% endcomment %}
-            <!-- // end start item -->
-        </ul>
-
+            </ul>
         <div class="modal_button_container">
             <button class="button large expanded green" data-close>
                 <span class="text">{% trans "The next step" %} </span>
@@ -484,74 +426,8 @@
             </svg>
         </button>
         <!-- // end close btn for modal -->
-    </div>
+    </div> {% endcomment %}
     <!-- // end Modal_3 --> 
-     
-    {% comment %} <!-- Modal_4 -->
-    <div class="reveal custom_popup" id="Modal_4" data-reveal>
-        <h1 class="modal_title">نقاط ضعف ما از نظر شما</h1>
-
-        <div class="checkbox_group">
-            <!-- start item -->
-            <label class="control checkbox_element">
-                <span class="text">ناقص بودن  اقلام منو</span>
-                <input type="checkbox"  />
-                <div class="element_indicator"></div>
-            </label>
-            <!-- //end item -->
-            <!-- start item -->
-            <label class="control checkbox_element">
-                <span class="text">سرعت پایین رسیدگی به مهمانان</span>
-                <input type="checkbox"  />
-                <div class="element_indicator"></div>
-            </label>
-            <!-- //end item -->
-            <!-- start item -->
-            <label class="control checkbox_element">
-                <span class="text">ناقص بودن سرویس میز</span>
-                <input type="checkbox"  />
-                <div class="element_indicator"></div>
-            </label>
-            <!-- //end item -->
-            <!-- start item -->
-            <label class="control checkbox_element">
-                <span class="text">قیمت بالای غذا   </span>
-                <input type="checkbox"  />
-                <div class="element_indicator"></div>
-            </label>
-            <!-- //end item -->
-            <!-- start item -->
-            <label class="control checkbox_element">
-                <span class="text"> سرو صدای زیاد در رستوران  </span>
-                <input type="checkbox"  />
-                <div class="element_indicator"></div>
-            </label>
-            <!-- //end item -->
-        </div>
-
-        <div class="modal_button_container">
-            <button class="button large expanded green" data-close>
-                <span class="text">مرحله بعدی</span>
-            </button>
-        </div>
-
-        <!-- close btn for modal -->
-        <button class="close-button" data-close aria-label="Close modal" type="button">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                    <path
-                        d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM15.36 14.3C15.65 14.59 15.65 15.07 15.36 15.36C15.21 15.51 15.02 15.58 14.83 15.58C14.64 15.58 14.45 15.51 14.3 15.36L12 13.06L9.7 15.36C9.55 15.51 9.36 15.58 9.17 15.58C8.98 15.58 8.79 15.51 8.64 15.36C8.35 15.07 8.35 14.59 8.64 14.3L10.94 12L8.64 9.7C8.35 9.41 8.35 8.93 8.64 8.64C8.93 8.35 9.41 8.35 9.7 8.64L12 10.94L14.3 8.64C14.59 8.35 15.07 8.35 15.36 8.64C15.65 8.93 15.65 9.41 15.36 9.7L13.06 12L15.36 14.3Z">
-                    </path>
-                    </path>
-                </g>
-            </svg>
-        </button>
-        <!-- // end close btn for modal -->
-    </div>
-    <!-- // end Modal_4 --> {% endcomment %}
-
 {% endblock content %}
 
 {% block script %}
