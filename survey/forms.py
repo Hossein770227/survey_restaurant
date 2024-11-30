@@ -21,3 +21,4 @@ class CleanForm(forms.ModelForm):
         fields = ['cleaning_the_area','costomer_score']
 
 
+
